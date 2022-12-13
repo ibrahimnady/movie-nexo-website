@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import Navebar from './Navebar/Navebar';
-import {Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Home from './Home/Home';
 import Movies from './Moveis/Movies';
 import Aboute from './Aboute/Aboute';
@@ -22,53 +22,53 @@ function App() {
   let navigate = useNavigate();
   const [userData, setUserData] = useState(null)
   useEffect(() => {
-    if(localStorage.getItem('userToken')){
+    if (localStorage.getItem('userToken')) {
       getUserData();
     }
   }, [])
-  function getUserData(){
+  function getUserData() {
     let decodedToken = jwtDecode(localStorage.getItem('userToken'));
     setUserData(decodedToken);
-    
+
 
   }
-  function logOut(){
+  function logOut() {
     localStorage.removeItem('userToken');
     setUserData(null);
     navigate('/Login');
   }
-  function ProdectRoute({children}){
-    if(!localStorage.getItem('userToken')){
-      return <Navigate to='/Login' />
-    }else{
-      return children;
-    }
+  // function ProdectRoute({children}){
+  //   if(!localStorage.getItem('userToken')){
+  //     return <Navigate to='/Login' />
+  //   }else{
+  //     return children;
+  //   }
 
-  }
+  // }
   return (
     <div>
-      <Navebar userData={userData} logOut={logOut}/>
+      <Navebar userData={userData} logOut={logOut} />
       <MediaContextProvieder>
-      <Routes>
-        <Route path='/' element={ <ProdectRoute> <Home/> </ProdectRoute>}/>
-        <Route path='Home' element={<ProdectRoute> <Home/></ProdectRoute>}/>
-        <Route path='Movies' element={<ProdectRoute> <Movies/> </ProdectRoute>}/>
-        <Route path='About' element={<ProdectRoute> <Aboute/></ProdectRoute>}/>
-        <Route path='TV' element={<ProdectRoute> <TV/></ProdectRoute>}/>
-        <Route path='Person' element={<ProdectRoute> <Person/></ProdectRoute>}/>
-        <Route path='Login' element={<Login getUserData={getUserData}/>}/>
-        <Route path='Register' element={<Register/>}/>
-        <Route path='*' element={<h1>404 Not Found</h1>}/>
-        <Route path='Details' element={<Details />}>
-          <Route path=':id' element={<Details />} />
-        </Route>
-        <Route path='tvdetails' element={<TvDetails />}>
-          <Route path=':id' element={<TvDetails />} />
-        </Route>
-        <Route path='peopleDetails' element={<PeopleDetails />}>
-          <Route path=':id' element={<PeopleDetails />} />
-        </Route>
-      </Routes>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='Home' element={<Home />} />
+          <Route path='Movies' element={<Movies />} />
+          <Route path='About' element={<Aboute />} />
+          <Route path='TV' element={<TV />} />
+          <Route path='Person' element={<Person />} />
+        // <Route path='Login' element={<Login getUserData={getUserData} />} />
+        // <Route path='Register' element={<Register />} />
+          <Route path='*' element={<h1>404 Not Found</h1>} />
+          <Route path='Details' element={<Details />}>
+            <Route path=':id' element={<Details />} />
+          </Route>
+          <Route path='tvdetails' element={<TvDetails />}>
+            <Route path=':id' element={<TvDetails />} />
+          </Route>
+          <Route path='peopleDetails' element={<PeopleDetails />}>
+            <Route path=':id' element={<PeopleDetails />} />
+          </Route>
+        </Routes>
       </MediaContextProvieder>
     </div>
   );
