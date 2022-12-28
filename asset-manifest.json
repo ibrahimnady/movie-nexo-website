@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/movie-nexo-website/static/css/main.a78d9cc7.css",
-    "main.js": "/movie-nexo-website/static/js/main.64c024f6.js",
+    "main.js": "/movie-nexo-website/static/js/main.755f28e9.js",
     "static/media/fa-solid-900.ttf": "/movie-nexo-website/static/media/fa-solid-900.e615bbcb258550973c16.ttf",
     "static/media/fa-brands-400.ttf": "/movie-nexo-website/static/media/fa-brands-400.b823fc0dbb5a5f0c21bb.ttf",
     "static/media/fa-solid-900.woff2": "/movie-nexo-website/static/media/fa-solid-900.59edf72a325ac2048d60.woff2",
@@ -12,10 +12,10 @@
     "static/media/fa-v4compatibility.woff2": "/movie-nexo-website/static/media/fa-v4compatibility.afac89562a5301459069.woff2",
     "index.html": "/movie-nexo-website/index.html",
     "main.a78d9cc7.css.map": "/movie-nexo-website/static/css/main.a78d9cc7.css.map",
-    "main.64c024f6.js.map": "/movie-nexo-website/static/js/main.64c024f6.js.map"
+    "main.755f28e9.js.map": "/movie-nexo-website/static/js/main.755f28e9.js.map"
   },
   "entrypoints": [
     "static/css/main.a78d9cc7.css",
-    "static/js/main.64c024f6.js"
+    "static/js/main.755f28e9.js"
   ]
 }
