@@ -58,7 +58,7 @@ function App() {
           <Route path='Person' element={<Person />} />
         // <Route path='Login' element={<Login getUserData={getUserData} />} />
         // <Route path='Register' element={<Register />} />
-          <Route path='*' element={<h1>404 Not Found</h1>} />
+          <Route path='*' element={<Home/>} />
           <Route path='Details' element={<Details />}>
             <Route path=':id' element={<Details />} />
           </Route>
